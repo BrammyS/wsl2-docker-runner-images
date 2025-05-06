@@ -11,7 +11,10 @@ wsl sudo apt-get install ca-certificates curl
 wsl sudo install -m 0755 -d /etc/apt/keyrings
 wsl sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 wsl sudo chmod a+r /etc/apt/keyrings/docker.asc
-wsl -- sudo bash -c 'echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo ${UBUNTU_CODENAME:-$VERSION_CODENAME}) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null'
+$wsl_arch = wsl sh -c "dpkg --print-architecture"
+$wsl_codename = wsl sh -c ". /etc/os-release && echo \$UBUNTU_CODENAME"
+$repo_line = "deb [arch=$wsl_arch signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $wsl_codename stable"
+wsl sudo bash -c "echo '$repo_line' | tee /etc/apt/sources.list.d/docker.list"
 
 Write-Host "Docker repository added to apt sources"
 Start-Sleep 5
