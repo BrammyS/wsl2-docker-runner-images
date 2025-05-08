@@ -29,9 +29,9 @@ wsl sudo systemctl daemon-reload
 choco install docker-cli
 
 Write-Host "Setting environment variables for Docker CLI"
-[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localhost:2375', 'Process')
-[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localhost:2375', 'User')
-[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localhost:2375', 'Machine')
+[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://127.0.0.1:2375', 'Process')
+[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://127.0.0.1:2375', 'User')
+[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://127.0.0.1:2375', 'Machine')
 
 Write-Host "Verifying Docker CLI is using WSL2 daemon"
 docker info
