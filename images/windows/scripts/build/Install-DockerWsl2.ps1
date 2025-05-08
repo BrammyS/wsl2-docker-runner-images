@@ -26,6 +26,8 @@ wsl docker info
 Write-Host "Exposing Docker daemon to Windows"
 wsl bash -c "sudo sed -i 's|fd://|tcp://127.0.0.1:2375|' /usr/lib/systemd/system/docker.service"
 wsl sudo systemctl daemon-reload
+wsl sudo systemctl restart docker
+wsl sudo systemctl status docker
 choco install docker-cli
 
 Write-Host "Setting environment variables for Docker CLI"
