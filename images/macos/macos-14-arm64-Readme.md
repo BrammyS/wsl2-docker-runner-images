@@ -1,12 +1,11 @@
 | Announcements |
 |-|
 | [[macOS] Go version 1.21.* will be removed from all macOS images on May 12, 2025.](https://github.com/actions/runner-images/issues/12032) |
-| [[macOS 14] Xcode Command Line Tool version will be downgraded to 15.3.0 on macOS14 images](https://github.com/actions/runner-images/issues/11969) |
 ***
 # macOS 14
 - OS Version: macOS 14.7.5 (23H527)
 - Kernel Version: Darwin 23.6.0
-- Image Version: 20250421.1374
+- Image Version: 20250505.1431
 
 ## Installed Software
 
@@ -32,31 +31,31 @@
 - Bundler 2.6.8
 - Carthage 0.40.0
 - CocoaPods 1.16.2
-- Homebrew 4.4.31
+- Homebrew 4.5.0
 - NPM 10.8.2
 - NuGet 6.3.1.1
 - Pip3 25.0.1 (python 3.13)
 - Pipx 1.7.1
 - RubyGems 3.6.8
-- Vcpkg 2025 (build from commit 0d5cae1530)
+- Vcpkg 2025 (build from commit 41c447cc21)
 - Yarn 1.22.22
 
 ### Project Management
 - Apache Ant 1.10.15
 - Apache Maven 3.9.9
-- Gradle 8.13
+- Gradle 8.14
 
 ### Utilities
 - 7-Zip 17.05
 - aria2 1.37.0
-- azcopy 10.28.1
+- azcopy 10.29.0
 - bazel 8.2.1
 - bazelisk 1.26.0
 - bsdtar 3.5.3 - available by 'tar' alias
 - Curl 8.7.1
 - Git 2.49.0
 - Git LFS 3.6.1
-- GitHub CLI 2.70.0
+- GitHub CLI 2.72.0
 - GNU Tar 1.35 - available by 'gtar' alias
 - GNU Wget 1.25.0
 - gpg (GnuPG) 2.4.7
@@ -65,21 +64,21 @@
 - Packer 1.12.0
 - pkgconf 2.4.3
 - Unxip 3.1
-- yq 4.45.1
+- yq 4.45.2
 - zstd 1.5.7
 - Ninja 1.12.1
 
 ### Tools
-- AWS CLI 2.26.5
-- AWS SAM CLI 1.137.1
+- AWS CLI 2.27.7
+- AWS SAM CLI 1.138.0
 - AWS Session Manager CLI 1.2.707.0
 - Azure CLI 2.71.0
 - Azure CLI (azure-devops) 1.0.1
 - Bicep CLI 0.34.44
 - Cmake 3.31.6
-- CodeQL Action Bundle 2.21.0
+- CodeQL Action Bundle 2.21.2
 - Fastlane 2.227.1
-- SwiftFormat 0.55.5
+- SwiftFormat 0.55.6
 - Xcbeautify 2.28.0
 - Xcode Command Line Tools 16.2.0.0.1.1733547573
 - Xcodes 1.6.0
@@ -89,9 +88,9 @@
 ### Browsers
 - Safari 18.4 (19621.1.15.111.1)
 - SafariDriver 18.4 (19621.1.15.111.1)
-- Google Chrome 135.0.7049.96
-- Google Chrome for Testing 135.0.7049.95
-- ChromeDriver 135.0.7049.95
+- Google Chrome 136.0.7103.49
+- Google Chrome for Testing 136.0.7103.49
+- ChromeDriver 136.0.7103.49
 - Selenium server 4.29.0
 
 #### Environment variables
@@ -104,7 +103,7 @@
 ### Java
 | Version              | Environment Variable |
 | -------------------- | -------------------- |
-| 11.0.26+4            | JAVA_HOME_11_arm64   |
+| 11.0.27+6            | JAVA_HOME_11_arm64   |
 | 17.0.15+6            | JAVA_HOME_17_arm64   |
 | 21.0.7+6.0 (default) | JAVA_HOME_21_arm64   |
 
@@ -123,8 +122,8 @@
 
 #### Node.js
 - 18.20.8
-- 20.19.0
-- 22.14.0
+- 20.19.1
+- 22.15.0
 
 #### Go
 - 1.21.13

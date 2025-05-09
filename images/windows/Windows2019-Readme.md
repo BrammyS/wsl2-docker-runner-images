@@ -10,7 +10,7 @@
 ***
 # Windows Server 2019
 - OS Version: 10.0.17763 Build 7240
-- Image Version: 20250420.1.0
+- Image Version: 20250504.1.0
 
 ## Windows features
 - Windows Subsystem for Linux (WSLv1): Enabled
@@ -19,7 +19,7 @@
 
 ### Language and Runtime
 - Bash 5.2.37(1)-release
-- Go 1.21.13
+- Go 1.24.2
 - Julia 1.10.5
 - Kotlin 2.1.10
 - LLVM 18.1.8
@@ -33,13 +33,13 @@
 - Chocolatey 2.4.3
 - Composer 2.8.8
 - Helm 3.17.2
-- Miniconda 25.1.1 (pre-installed on the image but not added to PATH)
+- Miniconda 25.3.1 (pre-installed on the image but not added to PATH)
 - NPM 10.8.2
 - NuGet 6.13.2.1
-- pip 25.0.1 (python 3.9)
+- pip 25.1.1 (python 3.9)
 - Pipx 1.7.1
 - RubyGems 3.2.33
-- Vcpkg (build from commit 0d5cae1530)
+- Vcpkg (build from commit 41c447cc21)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -50,32 +50,32 @@
 
 ### Project Management
 - Ant 1.10.15
-- Gradle 8.13
+- Gradle 8.14
 - Maven 3.9.9
 - sbt 1.10.11
 
 ### Tools
 - 7zip 24.09
 - aria2 1.37.0
-- azcopy 10.28.1
+- azcopy 10.29.0
 - Bazel 8.2.1
 - Bazelisk 1.26.0
-- Bicep 0.34.44
+- Bicep 0.35.1
 - Cabal 3.14.2.0
 - CMake 3.31.6
-- CodeQL Action Bundle 2.21.0
+- CodeQL Action Bundle 2.21.2
 - Docker 27.5.1
 - Docker Compose v2 2.32.2
 - Docker-wincred 0.9.3
 - ghc 9.12.2
 - Git 2.49.0.windows.1
 - Git LFS 3.6.1
-- Google Cloud CLI 518.0.0
+- Google Cloud CLI 520.0.0
 - ImageMagick 7.1.1-47
 - InnoSetup 6.4.0
 - jq 1.7.1
 - Kind 0.27.0
-- Kubectl 1.32.3
+- Kubectl 1.33.0
 - Mercurial 5.0
 - gcc 8.1.0
 - gdb 8.1
@@ -85,7 +85,7 @@
 - OpenSSL 1.1.1w
 - Packer 1.12.0
 - Parcel 2.14.4
-- Pulumi 3.163.0
+- Pulumi 3.167.0
 - R 4.4.2
 - Service Fabric SDK 10.1.2493.9590
 - Stack 3.5.1
@@ -94,19 +94,19 @@
 - VSWhere 3.1.7
 - WinAppDriver 1.2.2009.02003
 - WiX Toolset 3.14.1.8722
-- yamllint 1.37.0
+- yamllint 1.37.1
 - zstd 1.5.7
 - Ninja 1.12.1
 
 ### CLI Tools
-- Alibaba Cloud CLI 3.0.270
-- AWS CLI 2.26.5
-- AWS SAM CLI 1.137.1
+- Alibaba Cloud CLI 3.0.272
+- AWS CLI 2.27.7
+- AWS SAM CLI 1.138.0
 - AWS Session Manager CLI 1.2.707.0
 - Azure CLI 2.71.0
 - Azure DevOps CLI extension 1.0.1
 - Cloud Foundry CLI 8.13.0
-- GitHub CLI 2.70.0
+- GitHub CLI 2.72.0
 
 ### Rust Tools
 - Cargo 1.86.0
@@ -123,14 +123,14 @@
 - Rustfmt 1.8.0
 
 ### Browsers and Drivers
-- Google Chrome 135.0.7049.96
-- Chrome Driver 135.0.7049.95
-- Microsoft Edge 135.0.3179.85
-- Microsoft Edge Driver 135.0.3179.85
-- Mozilla Firefox 137.0.2
+- Google Chrome 136.0.7103.49
+- Chrome Driver 136.0.7103.49
+- Microsoft Edge 136.0.3240.50
+- Microsoft Edge Driver 136.0.3240.50
+- Mozilla Firefox 138.0.1
 - Gecko Driver 0.36.0
 - IE Driver 4.14.0.0
-- Selenium server 4.31.0
+- Selenium server 4.32.0
 
 #### Environment variables
 | Name              | Value                              |
@@ -171,16 +171,14 @@ Note: MSYS2 is pre-installed on image but not added to PATH.
 ### Cached Tools
 
 #### Go
-- 1.20.14
-- 1.21.13
 - 1.22.12
 - 1.23.8
+- 1.24.2
 
 #### Node.js
-- 16.20.2
 - 18.20.8
-- 20.19.0
-- 22.14.0
+- 20.19.1
+- 22.15.0
 
 #### Python
 - 3.8.10
@@ -513,7 +511,7 @@ Note: MSYS2 is pre-installed on image but not added to PATH.
 
 #### Powershell Modules
 - Az: 12.1.0
-- AWSPowershell: 4.1.802
+- AWSPowershell: 4.1.812
 - DockerMsftProvider: 1.0.0.8
 - MarkdownPS: 1.10
 - Microsoft.Graph: 2.27.0
@@ -552,9 +550,9 @@ Note: MSYS2 is pre-installed on image but not added to PATH.
 ### Cached Docker images
 | Repository:Tag                                                            | Digest                                                                   | Created    |
 | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ---------- |
-| mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019  | sha256:a0f5d5659b412dc02824afdeed10402e3124ac0b8689978d4e42fec04aa9c2cd  | 2025-04-10 |
-| mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019 | sha256:4150b99b26bf15d9555bb8be3d928976e0e7270b903cfc8808a92c172dd15fba  | 2025-04-10 |
-| mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019     | sha256:a6204a95fe233aeccb685ff72daa94de473d20ba406370b6b6c920dd5235f4c3  | 2025-04-10 |
+| mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-ltsc2019  | sha256:d84580a8ec93e53ada9d4694c4c90c678514687bbe7e3b97c6d4ce7663940d24  | 2025-04-25 |
+| mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-ltsc2019 | sha256:15e7497e9d0fb2767fdd865fbc783e3b4672e190ab95b295bca892379b3c420f  | 2025-04-25 |
+| mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019     | sha256:feb36dfb2388364fa7844664b5102cf76c189169ef6599b517228d3b82e7b398  | 2025-04-25 |
 | mcr.microsoft.com/windows/nanoserver:1809                                 | sha256:a728b60718df567cf9b8981be370ad3824b4d60018f33664f0e2477844abc440  | 2025-04-15 |
-| mcr.microsoft.com/windows/servercore:ltsc2019                             | sha256:e746e5d5ef9beff2c723aba94e33ceb4311a35076f44ceafa6eba34ed0b86aff  | 2025-03-05 |
+| mcr.microsoft.com/windows/servercore:ltsc2019                             | sha256:ea7b7af45052c49ca9157bd5ae9418f26babce9144450ac0830e20c7fbdd5583  | 2025-04-15 |
 
