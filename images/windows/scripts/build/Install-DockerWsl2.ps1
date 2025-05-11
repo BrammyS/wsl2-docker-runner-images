@@ -43,8 +43,12 @@ docker rm test-hello-world
 
 Write-Host "Register a Task Scheduler task to start Docker daemon on Windows startup"
 $TaskName = "WSL2-Ubuntu-Startup"
-$Action = New-ScheduledTaskAction -Execute "wsl.exe" -Argument "-d Ubuntu --exec sudo bash -c 'dbus-launch true && sudo systemctl restart docker && sudo systemctl status docker'"
+$Action = New-ScheduledTaskAction -Execute "wsl.exe" -Argument "-d Ubuntu --exec dbus-launch true"
 $Trigger = New-ScheduledTaskTrigger -AtStartup
-$Trigger.Delay = "PT10S"
 $Principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+
+Write-Host "Updating the scheduled task"
 Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Principal $Principal -Description "Run WSL2 Ubuntu script at startup" -Force
+$Task = Get-ScheduledTask -TaskName $TaskName
+$Task.Settings.ExecutionTimeLimit = "PT0S" # Turn off "Stop the task if it runs longer than:"
+Set-ScheduledTask -InputObject $Task
