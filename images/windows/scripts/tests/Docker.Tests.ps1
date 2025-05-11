@@ -1,4 +1,14 @@
-Describe "Docker" {
+Describe "Docker is running" {
+    It "docker is installed" {
+        "docker --version" | Should -ReturnZeroExitCode
+    }
+
+    It "docker service is up" {
+        "docker images" | Should -ReturnZeroExitCode
+    }
+}
+
+Describe "Docker" -Skip:(Test-IsWin25) {
     It "docker is installed" {
         "docker --version" | Should -ReturnZeroExitCode
     }
@@ -12,14 +22,14 @@ Describe "Docker" {
     }
 }
 
-Describe "DockerCompose" {
+Describe "DockerCompose" -Skip:(Test-IsWin25) {
     It "docker compose v2" {
         "docker compose version" | Should -ReturnZeroExitCode
     }
 
 }
 
-Describe "DockerWinCred" {
+Describe "DockerWinCred" -Skip:(Test-IsWin25) {
     It "docker-wincred" {
         "docker-credential-wincred version" | Should -ReturnZeroExitCode
     }

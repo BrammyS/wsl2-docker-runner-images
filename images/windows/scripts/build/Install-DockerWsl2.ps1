@@ -39,3 +39,11 @@ Write-Host "Verifying Docker CLI is using WSL2 daemon"
 docker info
 docker run --name test-hello-world hello-world:linux
 docker rm test-hello-world
+
+Write-Host "Register a Task Scheduler task to start Docker daemon on Windows startup"
+$TaskName = "WSL2-Ubuntu-Startup"
+$Action = New-ScheduledTaskAction -Execute "wsl.exe" -Argument "-d Ubuntu --exec dbus-launch true"
+$Trigger = New-ScheduledTaskTrigger -AtStartup
+$Trigger.Delay = "00:00:10"
+$Principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -RunLevel Highest
+Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Principal $Principal -Description "Run WSL2 Ubuntu script at startup" -Force
