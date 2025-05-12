@@ -3,6 +3,11 @@ Describe "Docker is running" {
         "docker --version" | Should -ReturnZeroExitCode
     }
 
+    it "wsl startup scheduled task ran" {
+        $task = Get-ScheduledTask -TaskName "WSL2-Ubuntu-Startup"
+        $task.LastRunTime | Should -Not -BeNullOrEmpty
+    }
+
     It "docker service is up" {
         "docker images" | Should -ReturnZeroExitCode
     }
