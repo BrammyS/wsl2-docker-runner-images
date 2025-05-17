@@ -3,13 +3,18 @@ Describe "Docker is running" {
         "docker --version" | Should -ReturnZeroExitCode
     }
 
-    it "wsl startup scheduled task ran" {
-        $task = Get-ScheduledTask -TaskName "WSL2-Ubuntu-Startup"
-        $task.LastRunTime | Should -Not -BeNullOrEmpty
+    it "wsl should start up" {
+        wsl -d Ubuntu --exec dbus-launch true
+        wsl sudo systemctl restart docker | Should -ReturnZeroExitCode
+        wsl sudo systemctl status docker | Should -ReturnZeroExitCode
     }
 
     It "docker service is up" {
         "docker images" | Should -ReturnZeroExitCode
+    }
+
+    It "docker can run linux containers" {
+        docker run --name test-hello-world hello-world:linux | Should -ReturnZeroExitCode
     }
 }
 
