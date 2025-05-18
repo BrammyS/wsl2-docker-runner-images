@@ -5,8 +5,8 @@ Describe "Docker is running" {
 
     it "wsl should start up" {
         wsl -d Ubuntu --exec dbus-launch true
-        wsl sudo systemctl restart docker | Should -ReturnZeroExitCode
-        wsl sudo systemctl status docker | Should -ReturnZeroExitCode
+        "wsl sudo systemctl restart docker" | Should -ReturnZeroExitCode
+        "wsl sudo systemctl status docker" | Should -ReturnZeroExitCode
     }
 
     It "docker service is up" {
@@ -14,7 +14,7 @@ Describe "Docker is running" {
     }
 
     It "docker can run linux containers" {
-        docker run --name test-hello-world hello-world:linux | Should -ReturnZeroExitCode
+        "docker run --name test-hello-world hello-world:linux" | Should -ReturnZeroExitCode
     }
 }
 
