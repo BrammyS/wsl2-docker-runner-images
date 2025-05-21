@@ -74,8 +74,8 @@ $tools.AddToolVersion("Cabal", $(Get-CabalVersion))
 $tools.AddToolVersion("CMake", $(Get-CMakeVersion))
 $tools.AddToolVersion("CodeQL Action Bundle", $(Get-CodeQLBundleVersion))
 $tools.AddToolVersion("Docker", $(Get-DockerVersion))
-$tools.AddToolVersion("Docker Compose v2", $(Get-DockerComposeVersionV2))
 if (-not (Test-IsWin25)) {
+    $tools.AddToolVersion("Docker Compose v2", $(Get-DockerComposeVersionV2))
     $tools.AddToolVersion("Docker-wincred", $(Get-DockerWincredVersion))
 }
 $tools.AddToolVersion("ghc", $(Get-GHCVersion))
