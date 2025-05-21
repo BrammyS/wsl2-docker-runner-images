@@ -32,7 +32,7 @@ Describe "Docker" -Skip:(Test-IsWin25) {
     }
 }
 
-Describe "DockerCompose" -Skip:(Test-IsWin25) {
+Describe "DockerCompose" {
     It "docker compose v2" {
         "docker compose version" | Should -ReturnZeroExitCode
     }

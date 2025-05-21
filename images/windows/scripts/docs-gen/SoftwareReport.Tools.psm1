@@ -51,6 +51,9 @@ function Get-CodeQLBundleVersion {
 }
 
 function Get-DockerVersion {
+    wsl -d Ubuntu --exec dbus-launch true
+    wsl sudo systemctl restart docker
+    wsl sudo systemctl status docker
     $dockerVersion = $(docker version --format "{{.Server.Version}}")
     return $dockerVersion
 }
